@@ -19,6 +19,7 @@ import org.cbioportal.service.StudyViewColumnarService;
 import org.cbioportal.service.treatment.TreatmentCountReportService;
 import org.cbioportal.web.parameter.ClinicalDataType;
 import org.cbioportal.web.parameter.CustomSampleIdentifier;
+import org.cbioportal.web.parameter.GenericAssayDataBinFilter;
 import org.cbioportal.web.parameter.GenomicDataBinFilter;
 import org.cbioportal.web.parameter.GenomicDataFilter;
 import org.cbioportal.web.parameter.StudyViewFilter;
@@ -89,8 +90,8 @@ public class StudyViewColumnarServiceImpl implements StudyViewColumnarService {
     }
 
     @Override
-    public List<ClinicalDataCountItem> getGenericAssayDataBinCounts(StudyViewFilter studyViewFilter, List<String> filteredAttributes) {
-        return generateDataCountItemsFromDataCounts(studyViewRepository.getGenericAssayDataBinCounts(createContext(studyViewFilter), filteredAttributes));
+    public List<ClinicalDataCountItem> getGenericAssayDataBinCounts(StudyViewFilter studyViewFilter, List<GenericAssayDataBinFilter> genericAssayDataBinFilters) {
+        return generateDataCountItemsFromDataCounts(studyViewRepository.getGenericAssayDataBinCounts(createContext(studyViewFilter), genericAssayDataBinFilters));
     }
 
     public List<CopyNumberCountByGene> getCnaGenes(StudyViewFilter studyViewFilter) {
