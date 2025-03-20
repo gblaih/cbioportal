@@ -33,6 +33,7 @@ public class CancerStudy implements ReadPermission, Serializable {
   private Boolean readPermission = true;
   private Integer treatmentCount;
   private Integer structuralVariantCount;
+  private Integer imagingSampleCount;
 
   public Integer getCancerStudyId() {
     return cancerStudyId;
@@ -250,5 +251,13 @@ public class CancerStudy implements ReadPermission, Serializable {
 
   public void setStructuralVariantCount(Integer structuralVariantCount) {
     this.structuralVariantCount = structuralVariantCount;
+  }
+  
+  public Integer getImagingSampleCount() {
+    return imagingSampleCount;
+  }
+    
+  public void setImagingSampleCount(Integer imagingSampleCount) {
+    this.imagingSampleCount = imagingSampleCount;
   }
 }
